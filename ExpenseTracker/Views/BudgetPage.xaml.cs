@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace ExpenseTracker.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BudgetPage : ContentView
+    public partial class BudgetPage : ContentPage
     {
         public BudgetPage()
         {
