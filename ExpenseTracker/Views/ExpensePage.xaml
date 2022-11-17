@@ -3,10 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExpenseTracker.Views.ExpensePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical" Margin="5,15">
+            <Label Text="Expense:" FontSize="Title"></Label>
+            <Entry x:Name="ExpenseName"
+                    Margin="0,0,0,15" />
+            <Label Text="Amount:" FontSize="Title"></Label>
+            <Entry x:Name="Amount"
+                    Placeholder="Enter the Amount" Keyboard="Numeric"
+                    TextChanged="Amount_TextChanged" Margin="0,0,0,15"/>
+            <Label Text="Date:" FontSize="Title"></Label>
+            <DatePicker  x:Name="Date" Margin="0,0,0,15"/>
+            <StackLayout Orientation="Horizontal">
+                <RadioButton x:Name="rbFood" Margin="25,20" GroupName="ExpenseCategory"  FontSize="25" Content="&#xf2e7;"
+                             FontFamily="{StaticResource FontAwesomeSolid}" Value="Food"  CheckedChanged="ExpenseCategory_CheckedChanged" Scale="1.5" Padding="10" BackgroundColor="LightGray"/>
+                <RadioButton x:Name="rbHousing" Margin="25,20" GroupName="ExpenseCategory" Content="&#xf015;" Value="Housing" CheckedChanged="ExpenseCategory_CheckedChanged"
+                             FontFamily="{StaticResource FontAwesomeSolid}" Scale="1.5" Padding="10" BackgroundColor="LightGray"/>
+                <RadioButton x:Name="rbTravel" Margin="25,20" GroupName="ExpenseCategory" Content="&#xf5b0;" Value="Travel" CheckedChanged="ExpenseCategory_CheckedChanged"
+                             FontFamily="{StaticResource FontAwesomeSolid}" Scale="1.5" Padding="10" BackgroundColor="LightGray"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <RadioButton x:Name="rbColthing" Margin="25,20" GroupName="ExpenseCategory" Content="&#xf553;" Value="Colthing" CheckedChanged="ExpenseCategory_CheckedChanged"
+                             FontFamily="{StaticResource FontAwesomeSolid}" Scale="1.5" Padding="10" BackgroundColor="LightGray"/>
+                <RadioButton x:Name="rbPetCare" Margin="25,20" GroupName="ExpenseCategory" Content="&#xf1b0;" Value="PetCare" CheckedChanged="ExpenseCategory_CheckedChanged"
+                             FontFamily="{StaticResource FontAwesomeSolid}" Scale="1.5" Padding="10" BackgroundColor="LightGray"/>
+                <RadioButton x:Name="rbMiscellaneous" Margin="25,20" GroupName="ExpenseCategory" Content="&#xe494;" Value="Miscellaneous" CheckedChanged="ExpenseCategory_CheckedChanged" 
+                             FontFamily="{StaticResource FontAwesomeSolid}" Scale="1.5" Padding="10" BackgroundColor="LightGray" IsChecked="true"/>
+            </StackLayout>
+            <Label x:Name="ErrorMessage" FontSize="Medium" TextColor="Red" HorizontalTextAlignment="Center" Margin="0,10"></Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="SaveButton" Text="Save" 
+                        Clicked="SaveButton_Clicked" />
+                <Button Grid.Column="1" x:Name="CancelButton"
+                        Text="Cancel"
+                        Clicked="CancelButton_Clicked" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
-</ContentPage>
+</ContentPage> 

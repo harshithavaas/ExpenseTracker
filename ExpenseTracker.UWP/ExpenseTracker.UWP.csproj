@@ -145,7 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.12"/>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.12" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +153,15 @@
       <Project>{EE3BF4E6-6CDF-4E6E-9997-80CEEDD738D9}</Project>
       <Name>ExpenseTracker</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\FontAwesome6Brands.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\FontAwesome6Regular.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\FontAwesome6Solid.otf" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
