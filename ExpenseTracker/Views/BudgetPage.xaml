@@ -4,9 +4,20 @@
              x:Class="ExpenseTracker.Views.BudgetPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Editor x:Name="BudgetGoal"
+                    Placeholder="Enter your Budget"
+                    HeightRequest="100" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save" 
+                        Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1"
+                        Text="Delete"
+                        Clicked="OnDeleteButtonClicked" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
