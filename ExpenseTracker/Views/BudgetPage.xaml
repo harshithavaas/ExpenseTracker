@@ -15,8 +15,8 @@
                 <Button Text="Save" 
                         Clicked="OnSaveButtonClicked" />
                 <Button Grid.Column="1"
-                        Text="Delete"
-                        Clicked="OnDeleteButtonClicked" />
+                        Text="Cancle"
+                        Clicked="OnCancleButtonClicked" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>
