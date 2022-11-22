@@ -1,24 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:model="clr-namespace:ExpenseTracker.Models"
              x:Class="ExpenseTracker.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="Expenses" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontAttributes="Bold"/>
+            <Label Text="Monthly Budget" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontAttributes="Bold" />
+            <BoxView Grid.Column="1" Grid.Row="2" BackgroundColor="LightPink"/>
+            <BoxView Grid.Column="2" Grid.Row="2" BackgroundColor="Moccasin"/>
+            <Label x:Name="TotalExpenses" Text="{Binding totalexpenses}" Grid.Column="1" Grid.Row="2" Padding="20" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+            <Label x:Name="Budget" Text="{Binding budgetAmount}" Grid.Column="2" Grid.Row="2" Padding="20" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+            <Button Text="Edit Budget" Grid.Column="2" Grid.Row="3" BorderRadius="20" BorderWidth="2" BorderColor="Black" WidthRequest="50" HeightRequest="100" Clicked="EditButton_Clicked"/>
+            <Button Text="Add Expense" Grid.Column="1" Grid.Row="3" BorderRadius="20" BorderWidth="2" BorderColor="Black" Clicked="ExpenseButton_Clicked"/>
+        </Grid>
+        <ListView x:Name="ExpenseListView"
+                  Margin="20"
+                  ItemSelected="ExpenseListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:Expense">
+                    <TextCell Text="{Binding Name}" Detail="{Binding Amount}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
+
+    </StackLayout>
 </ContentPage>
