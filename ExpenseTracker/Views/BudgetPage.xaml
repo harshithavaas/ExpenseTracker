@@ -6,7 +6,8 @@
         <StackLayout>
             <Editor x:Name="BudgetGoal"
                     Placeholder="Enter your Budget"
-                    HeightRequest="100" />
+                    HeightRequest="100"
+                    Keyboard ="Numeric" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -15,8 +16,8 @@
                 <Button Text="Save" 
                         Clicked="OnSaveButtonClicked" />
                 <Button Grid.Column="1"
-                        Text="Cancle"
-                        Clicked="OnCancleButtonClicked" />
+                        Text="Cancel"
+                        Clicked="OnCancelButtonClicked" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

@@ -7,7 +7,7 @@ namespace ExpenseTracker.Models
     internal class Budget
     {
         
-            public decimal Amount { get; set; }
+            public decimal budgetAmount { get; set; }
             public DateTime Date { get; set; }
             public string FileName { get; set; }
         
