@@ -54,8 +54,8 @@ namespace ExpenseTracker.Views
                 case "Travel":
                     rbTravel.IsChecked = true;
                     break;
-                case "Colthing":
-                    rbColthing.IsChecked = true;
+                case "Clothing":
+                    rbClothing.IsChecked = true;
                     break;
                 case "PetCare":
                     rbPetCare.IsChecked = true;
