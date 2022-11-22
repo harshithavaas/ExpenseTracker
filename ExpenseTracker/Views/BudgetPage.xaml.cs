@@ -18,14 +18,16 @@ namespace ExpenseTracker.Views
         {
             InitializeComponent();
         }
-        //following code is to display budget goal in the mainpage
+        //following code is to display budget goal amount in the budgetpage
         protected override void OnAppearing()
         {
-            var budget = (Budget)BindingContext;
-            if (budget != null && !string.IsNullOrEmpty(budget.FileName))
+            var fileName = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "budget.txt");
+            if (!File.Exists(fileName))
             {
-                budget.Amount = Int32.Parse(File.ReadAllText(budget.FileName));
+                return;
             }
+
+            BudgetGoal.Text= File.ReadAllText(fileName);
         }
 
         private async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -44,14 +46,9 @@ namespace ExpenseTracker.Views
 
         }
 
-        private void OnDeleteButtonClicked(object sender, EventArgs e)
+        private void OnCancleButtonClicked(object sender, EventArgs e)
         {
-            var budget = (Budget)BindingContext;
-            if (File.Exists(budget.FileName))
-            {
-                File.Delete(budget.FileName);
-            }
-            BudgetGoal.Text = string.Empty;
+            
             Navigation.PopModalAsync();
         }
     }
