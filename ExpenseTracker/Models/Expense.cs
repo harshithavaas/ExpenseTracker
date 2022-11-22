@@ -9,7 +9,7 @@ namespace ExpenseTracker.Models
         Food,
         Housing,
         Travel,
-        Colthing,
+        Clothing,
         PetCare,
         Miscellaneous
     }
