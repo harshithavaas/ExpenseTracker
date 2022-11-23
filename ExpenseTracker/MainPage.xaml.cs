@@ -51,8 +51,8 @@ namespace ExpenseTracker
                     Date = File.GetCreationTime(budgetfile),
                     FileName = budgetfile
                 };
-                TotalExpenses.Text = totalexpense.ToString();
-                Budget.Text = budget.budgetAmount.ToString();
+                TotalExpenses.Text = "$" + totalexpense.ToString();
+                Budget.Text = "$" + budget.budgetAmount.ToString();
                 BudgetToggle.Text = "Edit Budget";
             }
             else
