@@ -53,6 +53,11 @@ namespace ExpenseTracker
                 };
                 TotalExpenses.Text = totalexpense.ToString();
                 Budget.Text = budget.budgetAmount.ToString();
+                BudgetToggle.Text = "Edit Budget";
+            }
+            else
+            {
+                BudgetToggle.Text = "Add Budget";
             }
         }
         private Category SetCategory(string category)

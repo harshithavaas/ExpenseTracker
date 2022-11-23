@@ -20,7 +20,7 @@
             <BoxView Grid.Column="2" Grid.Row="2" BackgroundColor="Moccasin"/>
             <Label x:Name="TotalExpenses" Text="{Binding totalexpenses}" Grid.Column="1" Grid.Row="2" Padding="20" HorizontalTextAlignment="Center" FontAttributes="Bold" />
             <Label x:Name="Budget" Text="{Binding budgetAmount}" Grid.Column="2" Grid.Row="2" Padding="20" HorizontalTextAlignment="Center" FontAttributes="Bold" />
-            <Button Text="Edit Budget" Grid.Column="2" Grid.Row="3" BorderRadius="20" BorderWidth="2" BorderColor="Black" WidthRequest="50" HeightRequest="100" Clicked="EditButton_Clicked"/>
+            <Button x:Name="BudgetToggle" Text="{Binding budgetText}" Grid.Column="2" Grid.Row="3" BorderRadius="20" BorderWidth="2" BorderColor="Black" WidthRequest="50" HeightRequest="100" Clicked="EditButton_Clicked"/>
             <Button Text="Add Expense" Grid.Column="1" Grid.Row="3" BorderRadius="20" BorderWidth="2" BorderColor="Black" Clicked="ExpenseButton_Clicked"/>
         </Grid>
         <ListView x:Name="ExpenseListView"
