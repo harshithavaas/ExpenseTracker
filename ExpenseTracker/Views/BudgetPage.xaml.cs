@@ -46,7 +46,7 @@ namespace ExpenseTracker.Views
 
         }
 
-        private void OnCancleButtonClicked(object sender, EventArgs e)
+        private void OnCancelButtonClicked(object sender, EventArgs e)
         {
             
             Navigation.PopModalAsync();
