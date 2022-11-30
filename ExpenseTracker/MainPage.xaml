@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:model="clr-namespace:ExpenseTracker.Models"
              x:Class="ExpenseTracker.MainPage">
-
     <StackLayout>
+        <Label Text="Expense Tracker" FontSize="25" TextColor="DarkCyan" BackgroundColor="LightGray"
+               HorizontalTextAlignment="Center" FontAttributes="Bold" Padding="10"></Label>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -16,7 +17,7 @@
             </Grid.RowDefinitions>
             <Label Text="Expenses" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontAttributes="Bold"/>
             <Label Text="Monthly Budget" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontAttributes="Bold" />
-            <BoxView Grid.Column="1" Grid.Row="2" BackgroundColor="LightPink"/>
+            <BoxView Grid.Column="1" Grid.Row="2" BackgroundColor="YellowGreen" x:Name="TotalExpenseBox"/>
             <BoxView Grid.Column="2" Grid.Row="2" BackgroundColor="Moccasin"/>
             <Label x:Name="TotalExpenses" Text="{Binding totalexpenses}" Grid.Column="1" Grid.Row="2" Padding="20" HorizontalTextAlignment="Center" FontAttributes="Bold" />
             <Label x:Name="Budget" Text="{Binding budgetAmount}" Grid.Column="2" Grid.Row="2" Padding="20" HorizontalTextAlignment="Center" FontAttributes="Bold" />
@@ -25,14 +26,26 @@
         </Grid>
         <ListView x:Name="ExpenseListView"
                   Margin="20"
-                  ItemSelected="ExpenseListView_ItemSelected">
+                  ItemSelected="ExpenseListView_ItemSelected" RowHeight="80" SeparatorColor="DarkCyan">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Expense">
-                    <TextCell Text="{Binding Name}" Detail="{Binding Amount}" />
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Spacing="2" VerticalOptions="Center">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" FontSize="18" TextColor="CadetBlue" WidthRequest="250" FontAttributes="Bold"/>
+                                <Label Text="$" FontSize="20" FontAttributes="Bold"/>
+                                <Label Text="{Binding Amount}" FontSize="18" FontAttributes="Bold"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="category:" FontSize="13" TextColor="CadetBlue" FontAttributes="Bold"/>
+                                <Label Text="{Binding Category}" FontSize="13" FontAttributes="Bold" WidthRequest="80"/>
+                                <Label Text="Date:" FontSize="13" TextColor="CadetBlue" FontAttributes="Bold"/>
+                                <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="13" FontAttributes="Bold"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-
     </StackLayout>
 </ContentPage>

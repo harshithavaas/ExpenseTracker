@@ -54,6 +54,15 @@ namespace ExpenseTracker
                 TotalExpenses.Text = "$" + totalexpense.ToString();
                 Budget.Text = "$" + budget.budgetAmount.ToString();
                 BudgetToggle.Text = "Edit Budget";
+
+                if (totalexpense > budget.budgetAmount)
+                {
+                    TotalExpenseBox.BackgroundColor = Color.LightPink;
+                }
+                else
+                {
+                    TotalExpenseBox.BackgroundColor = Color.YellowGreen;
+                }
             }
             else
             {
@@ -86,6 +95,7 @@ namespace ExpenseTracker
             }
             return setCategory;
         }
+
         private async void ExpenseListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             await Navigation.PushModalAsync(new ExpensePage
