@@ -38,7 +38,7 @@
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="category:" FontSize="13" TextColor="CadetBlue" FontAttributes="Bold"/>
-                                <Label Text="{Binding Category}" FontSize="13" FontAttributes="Bold" WidthRequest="80"/>
+                                <Label Text="{Binding Category}" FontSize="13" FontAttributes="Bold" WidthRequest="90"/>
                                 <Label Text="Date:" FontSize="13" TextColor="CadetBlue" FontAttributes="Bold"/>
                                 <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="13" FontAttributes="Bold"/>
                             </StackLayout>

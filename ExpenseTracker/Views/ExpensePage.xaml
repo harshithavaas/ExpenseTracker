@@ -24,7 +24,7 @@
                              FontFamily="{StaticResource FontAwesomeSolid}" Scale="1.5" Padding="10" BackgroundColor="LightGray"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <RadioButton x:Name="rbClothing" Margin="25,20" GroupName="ExpenseCategory" Content="&#xf553;" Value="Colthing" CheckedChanged="ExpenseCategory_CheckedChanged"
+                <RadioButton x:Name="rbClothing" Margin="25,20" GroupName="ExpenseCategory" Content="&#xf553;" Value="Clothing" CheckedChanged="ExpenseCategory_CheckedChanged"
                              FontFamily="{StaticResource FontAwesomeSolid}" Scale="1.5" Padding="10" BackgroundColor="LightGray"/>
                 <RadioButton x:Name="rbPetCare" Margin="25,20" GroupName="ExpenseCategory" Content="&#xf1b0;" Value="PetCare" CheckedChanged="ExpenseCategory_CheckedChanged"
                              FontFamily="{StaticResource FontAwesomeSolid}" Scale="1.5" Padding="10" BackgroundColor="LightGray"/>
